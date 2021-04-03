@@ -1,0 +1,39 @@
+{ "Doctors": [
+  {
+    "Name"  : "Hibbert, Julius",
+    "Email" : "hibbert@notablehealth.com",
+    "ID" : "0",
+    "Appointments" : [
+      {"Name": "Sterling Archer" , "Time": "8:00AM" ,"Kind": "New Patient", "Num": "1"},
+      {"Name": "Cyril Figis" , "Time": "8:30AM" ,"Kind": "Follow-up", "Num": "2"},
+      {"Name": "Ray Gilette" , "Time": "9:00AM" ,"Kind": "Follow-up", "Num": "3"},
+      {"Name": "Lana Kane" , "Time": "9:30AM" ,"Kind": "New Patient", "Num": "4"},
+      {"Name": "Pam Poovey" , "Time": "10:00AM" ,"Kind": "New Patient", "Num": "5"}
+    ]
+  },
+  {
+    "Name"  : "Krieger, Algernop",
+    "Email" : "krieger@notablehealth.com",
+    "ID" : "1",
+    "Appointments" : [
+      {"Name": "Sterling Archer" , "Time": "8:00AM" ,"Kind": "New Patient", "Num": "1"},
+      {"Name": "Cyril Figis" , "Time": "8:30AM" ,"Kind": "Follow-up", "Num": "2"},
+      {"Name": "Ray Gilette" , "Time": "9:00AM" ,"Kind": "Follow-up", "Num": "3"},
+      {"Name": "Lana Kane" , "Time": "9:30AM" ,"Kind": "New Patient", "Num": "4"},
+      {"Name": "Pam Poovey" , "Time": "10:00AM" ,"Kind": "New Patient", "Num": "5"}
+    ]
+  },
+  {
+    "Name"  : "Riviera, Nick",
+    "Email" : "Riviera@notablehealth.com",
+    "ID" : "2",
+    "Appointments" : [
+      {"Name": "Sterling Archer" , "Time": "8:00AM" ,"Kind": "New Patient", "Num": "1"},
+      {"Name": "Cyril Figis" , "Time": "8:30AM" ,"Kind": "Follow-up", "Num": "2"},
+      {"Name": "Ray Gilette" , "Time": "9:00AM" ,"Kind": "Follow-up", "Num": "3"},
+      {"Name": "Lana Kane" , "Time": "9:30AM" ,"Kind": "New Patient", "Num": "4"},
+      {"Name": "Pam Poovey" , "Time": "10:00AM" ,"Kind": "New Patient", "Num": "5"}
+    ]
+  }
+]
+}

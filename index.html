@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My NotableHealth Dashboard</title>
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <link rel="stylesheet" href="public/css/themes/my-custom-theme.css" />
+    <link rel="stylesheet" href="public/css/themes/jquery.mobile.icons.min.css" />
+    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+
+    <script>
+        $(document).ready(function(){
+            $("button").click(function(){
+                $.getJSON("/doctors", function(json){
+                    console.log(json);
+                });
+            });
+        });
+    </script>
+
+
+</head>
+<body>
+<script>
+</script>
+
+
+
+    <script>
+
+        $(document).ready(function(){
+                $.getJSON("/doctors", function(json){
+                    for (item in json){
+                        console.log(json[item]);
+                        let name = json[item]["Name"]
+                        let id = json[item]["ID"]
+                        $("#doctors").append('<li id=' + id + '><a href = "#">'  + name + '</a></li>');
+                    }
+                });
+        });
+
+
+
+
+        $('body').on('click', '#doctors li', function () {
+            $('#my-table tbody > tr').remove();
+            console.log(this.id);
+            $.getJSON('/doctors/'+this.id, function(json){
+                $("#docName").text(json["Name"]);
+                $("#docEmail").text(json["Email"]);
+                for (item in json["Appointments"]){
+                    let name =json["Appointments"][item]["Name"]
+                    let num =json["Appointments"][item]["Num"]
+                    let kind =json["Appointments"][item]["Kind"]
+                    let time =json["Appointments"][item]["Time"]
+                    console.log(json["Appointments"][item]);
+                    $('#my-table tr:last').after('<tr><td>' + num + '</td><td>' + name + '</td><td>' + time + '</td><td>' + kind + '</td></tr>');
+                }
+            });
+
+        });
+    </script>
+
+
+    <div class="ui-grid-a">
+        <div class="ui-block-a">
+            <h1><strong>Physicians</strong></h1>
+            <ul id="doctors" data-role="listview" data-inset="true">
+            </ul>
+
+        </div>
+        <div class="ui-block-b">
+            <h1 id="docName"><strong></strong></h1>
+            <h2 id="docEmail"><strong></strong></h2>
+            <table id="my-table">
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Time</th>
+                    <th>Kind</th>
+                </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </div>
+    </div><!-- /grid-a -->
+</body>
+</html>
